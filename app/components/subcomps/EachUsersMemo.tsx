@@ -1,5 +1,4 @@
 // we have color, note's content to be saved to redux global
-
 "use client";
 
 import "../../custom.css";

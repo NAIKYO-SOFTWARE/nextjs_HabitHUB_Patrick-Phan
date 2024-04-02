@@ -1,4 +1,3 @@
-"use client";
 import MemoSug from "./subcomps/MemoSug";
 
 const Suggestions = () => {
@@ -45,5 +44,5 @@ const Suggestions = () => {
       </div>
     </div>
   );
-}
+};
 export default Suggestions;
