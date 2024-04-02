@@ -1,34 +1,46 @@
 {
-  "name": "nextjs-patrick-phan-habithub",
+  "name": "nextjs_habithub_patrick-phan",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "test": "jest",
-    "lint:fix": "next lint --fix",
-    "format": "prettier --write ."
+    "lint": "next lint"
   },
   "dependencies": {
+    "@carbon/icons-react": "^11.39.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/base": "^5.0.0-beta.40",
+    "@mui/icons-material": "^5.15.14",
+    "@mui/material": "^5.15.14",
+    "@nextui-org/react": "^2.2.10",
+    "@reduxjs/toolkit": "^2.2.3",
+    "@types/react-redux": "^7.1.33",
     "next": "14.1.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-redux": "^9.1.0",
+    "redux": "^5.0.1",
+    "sanity-plugin-icon-picker": "^3.3.0",
+    "swr": "^2.2.5",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^9.0.8",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
-    "jest": "^29.7.0",
     "postcss": "^8",
-    "prettier": "^3.2.5",
     "tailwindcss": "^3.3.0",
-    "ts-jest": "^29.1.2",
-    "typescript": "^5.4.3"
+    "typescript": "^5"
   }
 }
