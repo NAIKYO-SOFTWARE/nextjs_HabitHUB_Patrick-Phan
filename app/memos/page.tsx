@@ -115,6 +115,9 @@ const Memos = () => {
           </p>
         )}
 
+        {/* see incompleted task(s) */}
+        {showUpIncomplete === true && incompletedMemos}
+
         <button className="mt-12 cursor-pointer text-gray-600 text-[26px] transform translate-x-[-80px]">
           <Link href="/suggestions">&lt;&lt; Return back to add memos.</Link>
         </button>
