@@ -1,12 +1,11 @@
 // we have color, note's content to be saved to redux global
 "use client";
 
-import "../../custom.css";
 import { useDispatch } from "react-redux";
 import {
   dispatchDeleteMemo,
   dispatchToggleComplete,
-} from "@/app/redux/store/store";
+} from "@/redux/store/store";
 
 interface IEachUsersMemo {
   id: number;

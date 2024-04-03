@@ -1,4 +1,7 @@
-import MemoSug from "./subcomps/MemoSug";
+"use client";
+
+import Link from "next/link";
+import MemoInSuggestions from "../../components/sub-components/MemoInSuggest";
 
 const Suggestions = () => {
   const green = "#86EFAC";
@@ -27,7 +30,7 @@ const Suggestions = () => {
         </p>
 
         {memos.map((memo) => (
-          <MemoSug
+          <MemoInSuggestions
             key={memo.id}
             id={memo.id}
             color={memo.color}
@@ -35,11 +38,8 @@ const Suggestions = () => {
           />
         ))}
 
-        <button
-          onClick={() => (window.location.href = "/allMemos")}
-          className="mt-12 cursor-pointer text-gray-600 text-[26px]"
-        >
-          &gt;&gt; See all your memos
+        <button className="mt-12 cursor-pointer mb-[40px] text-gray-600 text-[26px]">
+          <Link href="/memos">&gt;&gt; See all your memos</Link>
         </button>
       </div>
     </div>

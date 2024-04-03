@@ -2,6 +2,7 @@ import addMemoReducer from "../reducers/memoReducer";
 import loginReducer from "../reducers/loginReducer";
 import { configureStore } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
+import { useRouter } from "next/router";
 
 const store = configureStore({
   reducer: {
@@ -41,13 +42,7 @@ export function dispatchLoginSuccess(email: string, dispatch: any) {
 }
 
 export function getAllMemosFromLocal() {
-  //   let memosFromLocal = JSON.parse(localStorage.getItem("memos"));
-
-  let memosFromLocal = localStorage.getItem("memos");
-  if (memosFromLocal !== null) {
-    let parsedMemos = JSON.parse(memosFromLocal);
-    // Use the parsed JSON data as needed
-  }
+  let memosFromLocal = JSON.parse(localStorage.getItem("memos") ?? "[]");
 
   if (!memosFromLocal) {
     return [];
