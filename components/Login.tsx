@@ -27,30 +27,30 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className=" mt-[80px] w-full flex flex-col justify-start items-center ">
-      <div className="my-[30px] text-purple-400 text-[23px] font-bold z-10 mx-auto">
+    <div className=" mt-[50px] w-full flex flex-col justify-start items-center ">
+      <div className="mt-[30px] mb-[-20px] text-purple-400 text-[23px] font-bold z-10 mx-auto">
         Login to HabitHUB
       </div>
 
-      <div className="w-[320px] my-[30px] font-thin  text-center text-white text-[17px] z-10 mx-auto">
+      <div className="w-[320px] my-[30px] font-thin  text-center text-black text-[17px] z-10 mx-auto">
         Welcome back! Sign in using your social account or email to continue us
       </div>
 
       {/* here come logos for different social media platforms */}
-      <div className="z-10 w-[300px] mr-[-50px]">
+      <div className="z-10 w-[300px] mt-[-40px] mr-[-65px]">
         <div className="my-[15px] flex w-[300px] space-x-12 ">
           <Logo brandLogo={"google"} />
           <Logo brandLogo={"facebook"} />
           <Logo brandLogo={"apple"} />
         </div>
+      </div>
 
-        <div className="strike-sides text-gray-500 text-[22px] font-bold">
-          OR
-        </div>
+      <div className="strike-sides mt-[32px] mr-[20px] text-gray-700 text-[22px] font-bold">
+        OR
       </div>
 
       {/* login form */}
-      <form className="mt-[80px] mb-[80px]">
+      <form className="mt-[30px] mb-[80px]">
         <div className="bg-white p-5 rounded-lg w-[400px] shadow-lg">
           <TextField
             id="email-login"
@@ -66,7 +66,7 @@ const Login: React.FC = () => {
         </div>
 
         {/* line-breaker */}
-        <div className="my-8" />
+        <div className="my-[16px]" />
 
         <div className="bg-white p-5 rounded-lg w-[400px] shadow-lg">
           <TextField
@@ -86,7 +86,11 @@ const Login: React.FC = () => {
 
       <Button
         variant="contained"
-        sx={{ backgroundColor: "#1976d2", marginBottom: "30px" }}
+        sx={{
+          backgroundColor: "#1976d2",
+          marginBottom: "90px",
+          marginTop: "-30px",
+        }}
         size="large"
         onClick={handleLogin}
         endIcon={<LoginIcon />}

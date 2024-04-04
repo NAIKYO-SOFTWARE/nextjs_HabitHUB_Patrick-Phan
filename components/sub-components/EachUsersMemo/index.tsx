@@ -6,6 +6,7 @@ import {
   dispatchDeleteMemo,
   dispatchToggleComplete,
 } from "@/redux/store/store";
+import { Box, Typography } from "@mui/material";
 
 interface IEachUsersMemo {
   id: number;
@@ -27,35 +28,44 @@ export const EachUsersMemo: React.FC<IEachUsersMemo> = ({
   };
 
   const deleteThisNote = () => {
-    if (window.confirm("Are you sure?")) {
+    if (window.confirm("Are you sure you want to delete this note?")) {
       dispatchDeleteMemo(id, dispatch);
     }
   };
 
   return (
-    <div key={id} className="flex w-[520px] mt-[13px]">
-      <div
+    <div key={id} className="flex w-fit mt-[13px]">
+      <Box
         onClick={toggleComplete}
-        style={{ backgroundColor: color }}
-        className={`w-[320px] h-[70px] flex space-x-[155px] rounded-lg vertical-alignment`}
+        sx={{
+          backgroundColor: color,
+          width: "320px",
+          height: "70px",
+          borderRadius: "6px",
+          display: "flex",
+          alignItems: "center",
+          cursor: "pointer",
+        }}
       >
-        <span
-          className={`ml-[13px] text-[23px] ${complete ? "line-through" : ""}`}
-        >
-          {note}
-        </span>
+        {complete ? (
+          <Typography
+            variant="h6"
+            sx={{ ml: 2, textDecoration: "line-through" }}
+          >
+            {note}
+          </Typography>
+        ) : (
+          <Typography variant="h6" sx={{ ml: 2 }}>
+            {note}
+          </Typography>
+        )}
+      </Box>
 
-        <div
-          className={`h-[18px] w-[18px] ${
-            complete ? "bg-gray-300" : "bg-white"
-          } rounded-full border border-solid`}
-        ></div>
-      </div>
       <div
         onClick={deleteThisNote}
-        className="text-white bg-red-500 w-[50px] h-[20px]"
+        className="cursor-pointer text-[46px] text-white px-[4px]  rounded bg-red-500 w-fit h-fit"
       >
-        Delete
+        X
       </div>
     </div>
   );

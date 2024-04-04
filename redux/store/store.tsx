@@ -102,3 +102,10 @@ export function dispatchDeleteMemo(id: number, dispatch: any) {
 
   localStorage.setItem("memos", JSON.stringify(store.getState().memos));
 }
+
+// DELETE_ALL_MEMOS
+export function dispatchDeleteEverything(dispatch: any) {
+  dispatch({ type: "DELETE_ALL_MEMOS" });
+
+  localStorage.setItem("memos", JSON.stringify(store.getState().memos));
+}

@@ -23,6 +23,10 @@ const addMemoReducer = (state = initialState, action: any) => {
     case "DELETE_MEMO":
       return state.filter((eachMemo) => eachMemo.id !== action.payload.id);
 
+    // DELETE_ALL_MEMOS
+    case "DELETE_ALL_MEMOS":
+      return [];
+
     // !complete
     case "TOGGLE_COMPLETE":
       return state.map(
