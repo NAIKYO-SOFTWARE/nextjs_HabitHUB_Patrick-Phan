@@ -4,11 +4,12 @@ import store from "../redux/store/store";
 import { Provider } from "react-redux";
 import Suggestions from "./suggestions/page";
 import Link from "next/link";
+import Menu from "@/components/Menu";
 
 // chính
 const Home: React.FC = () => {
   return (
-    <div>
+    <div className="w-[430px]">
       <Login />
     </div>
   );

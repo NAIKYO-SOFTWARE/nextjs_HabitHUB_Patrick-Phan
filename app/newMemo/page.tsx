@@ -1,17 +1,20 @@
 "use client";
 
+import Menu from "@/components/Menu";
 import StyledButton from "@/components/sub-components/Button/Button";
 import { dispatchAddMemo } from "@/redux/store/store";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, InputLabel } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Link from "next/link";
 import { useState, ChangeEvent, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { IconPicker } from "react-fa-icon-picker";
 
 const NewMemo = () => {
   enum Colors {
-    blue = "#01579b",
+    // blue = "#01579b",
+    white = "#fff",
     teal = "#1de9b6",
     pink = "#ad1457",
     red = "#c62828",
@@ -47,8 +50,22 @@ const NewMemo = () => {
   };
 
   return (
-    <div className="w-full h-screen">
-      <div className="w-fit translate-y-[100px] m-auto left-[50%] transform translate-x-[-50%]">
+    <div className="w-[430px] m-auto bg-[#bde0fe] h-screen">
+      <div className="m-auto w-fit">
+        <FontAwesomeIcon
+          icon={faStar}
+          style={{
+            margin: "auto",
+            fontSize: "40px",
+            marginTop: "80px",
+            color: "#ffff00",
+          }}
+        />
+      </div>
+
+      <p className="w-fit m-auto mb-6">New Task</p>
+
+      <div className="w-fit m-auto">
         <Box
           component="form"
           sx={{
@@ -112,10 +129,10 @@ const NewMemo = () => {
         <div className="mt-[29px] m-auto w-fit">
           <StyledButton onClick={addMemo}>Add memo</StyledButton>
         </div>
+      </div>
 
-        <button className="mt-12 cursor-pointer mb-[40px] text-gray-600 text-[23px]">
-          <Link href="/memos">&lt;&lt; Return back to see all your memos</Link>
-        </button>
+      <div className="fixed bg-white rounded-t-md bottom-0 w-[430px]">
+        <Menu />
       </div>
     </div>
   );

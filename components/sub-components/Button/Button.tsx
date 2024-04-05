@@ -16,32 +16,32 @@ const StyledButton = styled(BaseButton)(
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 1.5;
-    background-color: ${blue[500]};
+    background-color: ${blue[400]};
     padding: 8px 16px;
     border-radius: 8px;
     color: white;
     transition: all 150ms ease;
     cursor: pointer;
-    border: 1px solid ${blue[500]};
+    border: 1px solid ${blue[400]};
     box-shadow: 0 2px 1px ${
       theme.palette.mode === "dark"
         ? "rgba(0, 0, 0, 0.5)"
         : "rgba(45, 45, 60, 0.2)"
-    }, inset 0 1.5px 1px ${blue[400]}, inset 0 -2px 1px ${blue[600]};
+    }, inset 0 1.5px 1px ${blue[300]}, inset 0 -2px 1px ${blue[500]};
 
     &:hover {
-      background-color: ${blue[600]};
+      background-color: ${blue[500]};
     }
 
     &.${buttonClasses.active} {
-      background-color: ${blue[700]};
+      background-color: ${blue[600]};
       box-shadow: none;
       transform: scale(0.99);
     }
 
     &.${buttonClasses.focusVisible} {
       box-shadow: 0 0 0 4px ${
-        theme.palette.mode === "dark" ? blue[300] : blue[200]
+        theme.palette.mode === "dark" ? blue[200] : blue[200]
       };
       outline: none;
     }

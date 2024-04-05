@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 // import global css that applies for all components in app
 import "./globals.css";
 import { StoreProvider } from "../redux/store/StoreProvider";
+import Menu from "@/components/Menu";
 
 // này chỉ là định nghĩa font thôi
 const inter = Inter({ subsets: ["latin"] });

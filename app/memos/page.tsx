@@ -2,7 +2,7 @@
 
 // ở đây sẽ hồi tất cả mọi redux state về những memo đã thêm
 import { EachUsersMemo } from "../../components/sub-components/EachUsersMemo";
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import {
   dispatchDeleteEverything,
   getAllMemosFromLocal,
@@ -12,6 +12,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Box, Button, Modal, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
+import Menu from "@/components/Menu";
 
 const Memos = () => {
   const [open, setOpen] = useState(false);
@@ -38,8 +39,10 @@ const Memos = () => {
   };
 
   const deleteAllMemos = () => {
-    if (window.confirm("Are you sure to delete them all?")) {
-      dispatchDeleteEverything(dispatch);
+    if (allMemos.length > 0) {
+      if (window.confirm("Are you sure to clear all your memos?")) {
+        dispatchDeleteEverything(dispatch);
+      }
     }
   };
 
@@ -83,15 +86,19 @@ const Memos = () => {
   );
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center m-auto mb-[100px] w-[430px] min-h-screen">
       <div className="flex justify-center m-auto flex-col">
-        <p className="w-fit m-auto mt-10 mb-2 text-[20px] text-center text-gray-600">
-          {`All user's memos`}
+        <p className="w-fit m-auto mb-2 text-[20px] text-center text-gray-600">
+          {`All memos`}
         </p>
 
-        <div className="flex space-x-[10px]">
+        <div
+          className={`flex ${
+            showUpIncomplete === true ? "space-x-36" : "space-x-20"
+          }`}
+        >
           <button
-            className={`h-[30px] mt-[10px] m-auto px-[5px] w-fit rounded-lg ${
+            className={`h-[30px] m-auto px-[5px] w-fit rounded-lg ${
               showUpIncomplete === true ? "bg-violet-400" : "bg-cyan-500"
             } `}
             onClick={showIncompletedMemos}
@@ -102,15 +109,15 @@ const Memos = () => {
           <Button
             variant="outlined"
             sx={{
-              width: "fit-content",
               border: "2px solid",
+              borderRadius: "100px",
               fontWeight: "bold",
               fontSize: "13px",
               textTransform: "none",
             }}
             onClick={deleteAllMemos}
           >
-            Delete all
+            Clear all
           </Button>
         </div>
 
@@ -135,16 +142,20 @@ const Memos = () => {
         {/* shows no memos have made */}
         {allMemos.length === 0 && (
           <p className="mt-12 m-auto text-gray-600 text-[17px]">
-            No memos have made.
+            No memos have been made.
           </p>
         )}
 
         {/* see incompleted task(s) */}
         {showUpIncomplete === true && incompletedMemos}
 
-        <button className="mt-12 cursor-pointer text-gray-600 text-[13px]">
+        {/* <button className="mt-12 cursor-pointer text-gray-600 text-[13px]">
           <Link href="/suggestions">&lt;&lt; Return back to add memos.</Link>
-        </button>
+        </button> */}
+      </div>
+
+      <div className="fixed bottom-0 w-[430px] rounded-t-lg bg-white">
+        <Menu />
       </div>
     </div>
   );

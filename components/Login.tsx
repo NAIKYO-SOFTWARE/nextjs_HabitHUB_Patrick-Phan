@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { dispatchLoginSuccess } from "../redux/store/store";
 import { Button, ButtonBase, TextField } from "@mui/material";
 import LoginIcon from "@mui/icons-material/Login";
+import Menu from "./Menu";
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -27,7 +28,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className=" mt-[50px] w-full flex flex-col justify-start items-center ">
+    <div className=" mt-[50px] w-full transform translate-x-[84%] flex flex-col items-center ">
       <div className="mt-[30px] mb-[-20px] text-purple-400 text-[23px] font-bold z-10 mx-auto">
         Login to HabitHUB
       </div>
@@ -88,7 +89,7 @@ const Login: React.FC = () => {
         variant="contained"
         sx={{
           backgroundColor: "#1976d2",
-          marginBottom: "90px",
+          marginBottom: "150px",
           marginTop: "-30px",
         }}
         size="large"
@@ -97,6 +98,10 @@ const Login: React.FC = () => {
       >
         Login
       </Button>
+
+      <div className="fixed bottom-0 w-[430px] rounded-t-lg bg-white">
+        <Menu />
+      </div>
     </div>
   );
 };

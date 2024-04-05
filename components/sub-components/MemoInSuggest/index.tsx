@@ -22,13 +22,13 @@ const MemoInSuggestions: React.FC<IMemoSugProps> = ({ id, color, note }) => {
   };
 
   return (
-    <div key={id} className="flex w-[380px] mt-[13px]">
+    <div key={id} className="flex justify-between w-[380px] mt-[13px]">
       <Box
         onClick={toggleComplete}
         sx={{
           backgroundColor: color,
           width: "320px",
-          height: "70px",
+          height: "90px",
           borderRadius: "6px",
           display: "flex",
           alignItems: "center",
@@ -45,11 +45,13 @@ const MemoInSuggestions: React.FC<IMemoSugProps> = ({ id, color, note }) => {
           onClick={addMemo}
           variant="contained"
           sx={{
-            fontSize: "20px",
-            height: "1px",
-            width: "2px",
+            height: "40px",
+            width: "40px",
+            marginLeft: "10px",
+            display: "flex",
+            justifyContent: "center",
             backgroundColor: "#d3d3d3",
-            borderRadius: "100%",
+            borderRadius: "50%",
             color: "black",
             "&:hover": {
               backgroundColor: "#d3d3d3",

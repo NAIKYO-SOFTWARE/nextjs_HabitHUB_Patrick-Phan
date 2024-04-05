@@ -34,13 +34,13 @@ export const EachUsersMemo: React.FC<IEachUsersMemo> = ({
   };
 
   return (
-    <div key={id} className="flex w-fit mt-[13px]">
+    <div key={id} className="flex w-[340px] mt-[13px] shadow-lg rounded-l-md">
       <Box
         onClick={toggleComplete}
         sx={{
           backgroundColor: color,
-          width: "320px",
-          height: "70px",
+          width: "100%",
+          height: "90px",
           borderRadius: "6px",
           display: "flex",
           alignItems: "center",
@@ -63,7 +63,7 @@ export const EachUsersMemo: React.FC<IEachUsersMemo> = ({
 
       <div
         onClick={deleteThisNote}
-        className="cursor-pointer text-[46px] text-white px-[4px]  rounded bg-red-500 w-fit h-fit"
+        className="cursor-pointer absolute flex justify-center text-[21px] text-white px-[4px] rounded bg-red-500 w-[27px] h-fit"
       >
         X
       </div>
